@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "server_name": "monsite.local",
+    "listen": 80,
+    "root": "/var/www/html/site1"
+  },
+  {
+    "id": 2,
+    "server_name": "blog.local",
+    "listen": 8080,
+    "root": "/var/www/html/blog"
+  }
+]

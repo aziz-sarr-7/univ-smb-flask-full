@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+
+    <h2>Fichier de configuration</h2>
+    <pre>{{ config }}</pre>
+
+    <h2>Nom du fichier</h2>
+    <pre>{{ filename }}</pre>
+
+    <h2>Chemin cible</h2>
+    <pre>{{ target_path }}</pre>
+
+    <h2>Commandes à exécuter</h2>
+    <pre>{% for command in commands %}{{ command }}
+{% endfor %}</pre>
+</body>
+</html>

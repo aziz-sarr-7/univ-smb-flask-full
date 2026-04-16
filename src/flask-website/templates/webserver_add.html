@@ -6,7 +6,15 @@
 </head>
 <body>
     <h1>Ajouter un serveur web</h1>
-
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+             <ul style="color:red;">
+                  {% for message in messages %}
+                    <li>{{ message }}</li>
+                  {% endfor %}
+              </ul>
+        {% endif %}
+     {% endwith %}
     <a href="/webservers">Retour à la liste</a>
 
     <form method="post">

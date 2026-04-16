@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un serveur web</title>
+</head>
+<body>
+    <h1>Ajouter un serveur web</h1>
+
+    <a href="/webservers">Retour à la liste</a>
+
+    <form method="post">
+        <p>
+            <label>Nom du serveur :</label><br>
+            <input type="text" name="server_name" required>
+        </p>
+
+        <p>
+            <label>Port :</label><br>
+            <input type="number" name="listen" required>
+        </p>
+
+        <p>
+            <label>Root :</label><br>
+            <input type="text" name="root" required>
+        </p>
+
+        <button type="submit">Ajouter</button>
+    </form>
+</body>
+</html>

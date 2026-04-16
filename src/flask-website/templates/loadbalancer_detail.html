@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détail du load balancer</title>
+</head>
+<body>
+    <h1>Détail du load balancer</h1>
+
+    <a href="/loadbalancers">Retour à la liste</a>
+
+    <h2>Configuration Nginx</h2>
+
+    <pre>
+upstream {{ loadbalancer.name | replace(' ', '_') }} {
+    server {{ loadbalancer.pass | replace('http://', '') }};
+}
+
+server {
+    listen 80;
+    server_name {{ loadbalancer.ip_bind }};
+
+    location / {
+        proxy_pass {{ loadbalancer.pass }};
+    }
+}
+    </pre>
+</body>
+</html>

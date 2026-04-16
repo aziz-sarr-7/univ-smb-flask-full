@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détail du reverse proxy</title>
+</head>
+<body>
+    <h1>Détail du reverse proxy</h1>
+
+    <a href="/reverseproxies">Retour à la liste</a>
+
+    <h2>Configuration Nginx</h2>
+
+    <pre>
+server {
+    listen {{ reverseproxy.listen }};
+    server_name {{ reverseproxy.server_name }};
+
+    location / {
+        proxy_pass {{ reverseproxy.proxy_pass }};
+    }
+}
+    </pre>
+</body>
+</html>

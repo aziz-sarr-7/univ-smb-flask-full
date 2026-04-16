@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détail du serveur web</title>
+</head>
+<body>
+    <h1>Détail du serveur web</h1>
+
+    <a href="/webservers">Retour à la liste</a>
+
+    <h2>Configuration Nginx</h2>
+
+    <pre>
+server {
+    listen {{ webserver.listen }};
+    server_name {{ webserver.server_name }};
+    root {{ webserver.root }};
+}
+    </pre>
+</body>
+</html>

@@ -10,5 +10,11 @@
     "server_name": "blog.local",
     "listen": 8080,
     "root": "/var/www/html/blog"
+  },
+  {
+    "id": 3,
+    "server_name": "serveur ajouté",
+    "listen": 777,
+    "root": "aziz"
   }
 ]

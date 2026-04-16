@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des serveurs web</title>
+</head>
+<body>
+    <h1>Liste des serveurs web</h1>
+
+    <a href="/">Retour à l'accueil</a>
+    <br>
+    <a href="/webservers/add">Ajouter un serveur web</a>
+
+    <ul>
+        {% for webserver in webservers %}
+            <li>
+                <a href="/webservers/{{ webserver.id }}">
+                    ID: {{ webserver.id }} | Nom: {{ webserver.server_name }}
+                </a>
+                | Port: {{ webserver.listen }} | Root: {{ webserver.root }}
+
+                <form action="/webservers/delete/{{ webserver.id }}" method="post" style="display:inline;">
+                    <button type="submit">Supprimer</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des reverse proxies</title>
+</head>
+<body>
+    <h1>Liste des reverse proxies</h1>
+
+    <a href="/">Retour à l'accueil</a>
+    <br>
+    <a href="/reverseproxies/add">Ajouter un reverse proxy</a>
+
+    <ul>
+        {% for reverseproxy in reverseproxies %}
+            <li>
+                <a href="/reverseproxies/{{ reverseproxy.id }}">
+                    ID: {{ reverseproxy.id }} | Nom: {{ reverseproxy.server_name }}
+                </a>
+                | Port: {{ reverseproxy.listen }}
+                | Proxy Pass: {{ reverseproxy.proxy_pass }}
+
+                <form action="/reverseproxies/delete/{{ reverseproxy.id }}" method="post" style="display:inline;">
+                    <button type="submit">Supprimer</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

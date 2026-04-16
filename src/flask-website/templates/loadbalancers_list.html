@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des load balancers</title>
+</head>
+<body>
+    <h1>Liste des load balancers</h1>
+
+    <a href="/">Retour à l'accueil</a>
+    <br>
+    <a href="/loadbalancers/add">Ajouter un load balancer</a>
+
+    <ul>
+        {% for lb in loadbalancers %}
+            <li>
+                <a href="/loadbalancers/{{ lb.id }}">
+                    ID: {{ lb.id }} | Nom: {{ lb.name }}
+                </a>
+                | IP Bind: {{ lb.ip_bind }} | Pass: {{ lb.pass }}
+
+                <form action="/loadbalancers/delete/{{ lb.id }}" method="post" style="display:inline;">
+                    <button type="submit">Supprimer</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
